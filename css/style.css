@@ -1,0 +1,44 @@
+div.card{
+    width: 250px;
+    height: 400px;
+    margin: 10px;
+}
+
+.hide {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 12px 16px 12px 16px;
+}
+
+.hide:hover {
+    background-color: pink;
+    color: white;
+}
+
+.header {
+    background-color: palevioletred;
+    padding: 30px 40px;
+    text-align: center;
+}
+
+.header:after {
+    content: "";
+    display: flex;
+    clear: both;
+}
+
+img {
+    height: 10rem;
+}
+
+a{
+    margin-top: auto;
+}
+
+select {
+    margin-top: 3px;
+    border: none;
+    width: 100%;
+    font-size: 16px;
+}
