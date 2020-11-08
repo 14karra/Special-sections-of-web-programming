@@ -12,11 +12,16 @@ Controller.prototype.moving = function(e) {
     this.fifteenModel.keyPress(e, this.fifteenView.pieceMoveSound);
 };
 Controller.prototype.needRendering = function(){
-    this.fifteenView.render(this.fifteenModel.order);
+    this.fifteenView.render(this.fifteenModel.objects);
 };
 Controller.prototype.gameWon = function (){
     this.fifteenView.solvedSound.play();
-    this.fifteenView.mainScene.style.backgroundColor = "gold";
+    let ctx = this.fifteenView.canvas.getContext("2d");
+
+    ctx.strokeStyle = 'rgb(229,209,96)';
+    ctx.lineWidth = this.fifteenView.canvas.border;
+    ctx.strokeRect(0, 0, this.canvas.width, this.canvas.height);
+
     document.removeEventListener('keydown', this.fifteenView.onKeyDownEvent);
     this.fifteenView.mainSound.stop();
     this.needRendering();

@@ -1,0 +1,6 @@
+const CANVAS_WIDTH = 440;
+const CANVAS_HEIGHT = 440;
+const CANVAS_BORDER = 35;
+
+const SQUARE_SIZE = 4;
+const PIECE_SIDE = 100;
