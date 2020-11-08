@@ -1,0 +1,16 @@
+h1 {
+    text-align: center;
+}
+
+#mainScene {
+    display: block;
+    position: relative;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 440px;
+    height: 440px;
+    border: solid 15px rgb(175, 0, 0);
+    border-radius: 10px;
+    background-color: cornsilk;
+}
