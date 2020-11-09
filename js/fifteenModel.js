@@ -8,20 +8,17 @@ let Model = function () {
 };
 Model.prototype.init = function (needRendering, gameWon) {
     this.objects = {
-        canvas: {
-            width: CANVAS_WIDTH,
-            height: CANVAS_HEIGHT,
-            border: CANVAS_BORDER,
-        },
         move: {up: -1 * SQUARE_SIZE, left: -1, down: SQUARE_SIZE, right: 1},
         order: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
             .sort(function () {
-                return Math.random() - .5;})
+                return Math.random() - .5;
+            })
             .concat(0),
         hole: 15,
-        needRendering: needRendering,
-        gameWon: gameWon
+        hasWonTheGame: false
     };
+    this.gameWon = gameWon;
+    this.needRendering = needRendering;
 };
 Model.prototype.checkIsCompleted = function () {
     return !this.objects.order.some(function (item, i) {
@@ -36,9 +33,10 @@ Model.prototype.go = function (move, sound) {
     this.objects.hole = index;
     sound.play();
     if (this.checkIsCompleted()) {
-        this.objects.gameWon();
+        this.objects.hasWonTheGame = true;
+        this.gameWon();
     } else {
-        this.objects.needRendering();
+        this.needRendering();
     }
     return true;
 };
