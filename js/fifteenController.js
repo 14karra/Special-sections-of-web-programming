@@ -15,11 +15,10 @@ Controller.prototype.needRendering = function(){
     this.fifteenView.render(this.fifteenModel.objects);
 };
 Controller.prototype.gameWon = function (){
-    this.needRendering();
     this.fifteenView.solvedSound.play();
-    this.fifteenView.mainScene.style.backgroundColor = "gold";
     document.removeEventListener('keydown', this.fifteenView.onKeyDownEvent);
-    this.fifteenView.mainSound.stop();
+    this.fifteenView.mainSound.pause();
+    this.needRendering();
 };
 
 let marioController = new Controller(fifteenView, fifteenModel);

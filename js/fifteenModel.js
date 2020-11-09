@@ -14,9 +14,10 @@ Model.prototype.init = function (needRendering, gameWon) {
                 return Math.random() - .5;})
             .concat(0),
         hole: 15,
-        needRendering: needRendering,
-        gameWon: gameWon
+        hasWonTheGame: false
     };
+    this.needRendering = needRendering;
+    this.gameWon = gameWon;
 };
 Model.prototype.checkIsCompleted = function () {
     return !this.objects.order.some(function (item, i) {
@@ -31,9 +32,10 @@ Model.prototype.go = function (move, sound) {
     this.objects.hole = index;
     sound.play();
     if (this.checkIsCompleted()) {
-        this.objects.gameWon();
+        this.objects.hasWonTheGame = true;
+        this.gameWon();
     } else {
-        this.objects.needRendering();
+        this.needRendering();
     }
     return true;
 };
