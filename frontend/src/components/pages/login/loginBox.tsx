@@ -44,7 +44,7 @@ export class LoginBox extends React.Component<MyProps & RouteComponentProps, MyS
             console.log("res.statusText " + resp.statusText);
             respStatus = resp.status.valueOf();
             switch (respStatus) {
-                case 302:
+                case 200:
                     this.setState({receivedNegativeResponse: false});
                     setTimeout(() => {
                         //localStorage.setItem("token", data.token);
