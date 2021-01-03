@@ -1,0 +1,61 @@
+<html lang="en">
+<head>
+    <meta charSet="utf-8"/>
+    <title>Audio Player</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="keywords" content="Audio player"/>
+    <meta name="description" content="Audio player."/>
+    <meta name="author" content="Djambong Tenkeu Hank-Debain"/>
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/constants.js"></script>
+    <script defer src="js/player.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div id="playlist">
+
+</div>
+<div class="audio-container">
+    <audio class="audio-player" id="audio-player">
+    </audio>
+
+    <progress value='0' max="100" class="audio-control progressBar" id="progressBar"></progress>
+
+    <div class="audio-hud">
+
+        <span class="audio-control prevAudio glyphicon glyphicon-step-backward" id="prevAudio"></span>
+        <span class="audio-control prevTime glyphicon glyphicon-backward" id="prevTime"></span>
+        <span class="audio-control playPauseControl glyphicon glyphicon-play" id="playPauseControl"></span>
+        <span class="audio-control nextTime glyphicon glyphicon-forward" id="nextTime"></span>
+        <span class="audio-control nextAudio glyphicon glyphicon-step-forward" id="nextAudio"></span>
+
+        <span class="audio-control currentTime" id="currentTime">00:00</span>
+        &nbsp;/&nbsp;
+        <span class="audio-control audioDuration" id="audioDuration">00:00</span>
+
+        <span class="audio-control muteButton soundPlaying glyphicon glyphicon-volume-up" id="muteButton"></span>
+
+        <span>
+            <input type="range" value="100" max="100" title="Volume" class="audio-control volumeScale" id="volumeScale">
+        </span>
+        <span class="audio-control">
+            <select title="Speed" class="audioSpeed" id="audioSpeed">
+                <option value="25">x0.25</option>
+                <option value="50">x0.50</option>
+                <option value="75">x0.75</option>
+                <option value="100" selected>x1.00</option>
+                <option value="125">x1.25</option>
+                <option value="150">x1.50</option>
+                <option value="175">x1.75</option>
+                <option value="200">x2.00</option>
+            </select>
+        </span>
+
+    </div>
+    <span class="audio-control glyphicon glyphicon-folder-open" onclick="document.getElementById('file-input').click();"></span>
+    <input id="file-input" type="file" name="name" style="display: none;"/>
+</div>
+</body>
