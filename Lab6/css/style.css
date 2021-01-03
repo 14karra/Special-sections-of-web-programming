@@ -1,0 +1,83 @@
+.glyphicon {
+    font-size: 20px;
+    margin-left: 5px;
+}
+
+.glyphicon-play {
+    color: forestgreen;
+}
+
+.glyphicon-pause {
+    color: orangered;
+}
+
+#volumeScale {
+    width: 70px;
+}
+
+.audio-container {
+    cursor: pointer;
+    background: #000;
+    width: 80%;
+    color: #fff;
+}
+
+.audio-player {
+    width: 100%;
+}
+
+.audio-hud {
+    cursor: pointer;
+    margin: 0;
+    padding: 1px;
+}
+
+.audio-control {
+    cursor: pointer;
+    display: inline;
+    vertical-align: middle;
+}
+
+.playPauseControl {
+    width: 30px;
+}
+
+.audio-hud__action_pause {
+    margin-left: 5px;
+    background: #c00;
+}
+
+.audio-hud__mute_true {
+    background: #c00;
+}
+
+.soundPlaying {
+    background: transparent;
+}
+
+.audio-hud__download {
+    background: #ccc;
+    width: 30px;
+    border-radius: 0 0 100px 100px;
+}
+
+.glyphicon-volume-off {
+    background: #cd3121;
+}
+
+.glyphicon-trash {
+    color: red;
+}
+
+progress {
+    width: 100%;
+}
+
+#playlist {
+    width: 80%;
+    border: 1px solid #c00;
+}
+
+#playlist > ul > li {
+    height: 30px;
+}
